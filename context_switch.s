@@ -149,7 +149,7 @@ __piccolo_task_init_stack:
 
 	/* switch to process stack */
 	msr psp, r0
-	movs r0, #3
+	movs r0, #2     /* Switch to process stack in Thread mode but PRIVLEDGED so SDK & USB are happy! */
 	msr control, r0
 	isb
 	/* intentionally continue down into piccolo_syscall */
